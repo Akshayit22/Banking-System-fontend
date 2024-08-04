@@ -1,12 +1,30 @@
 import './index.css';
-import { BsBank } from "react-icons/bs";
+import Footer from './pages/Footer';
+import Navbar from './pages/Navbar';
+import Home from './pages/Home';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
-  
+
   return (
     <>
-      <p className="text-lime-400 text-4xl">Testing Tailwind css</p>
-      <BsBank className='text-4xl bg-green-500'></BsBank>
+      <div>
+        <Navbar></Navbar>
+        <div className='md:ml-56 pt-16 md:pt-16 md:p-3 min-h-screen'>
+          <Routes >
+            <Route path='/' element={<Home></Home>}></Route>
+            <Route path='/signup' element={<Home></Home>}></Route>
+            <Route path='/login' element={<Home></Home>}></Route>
+            <Route path='/dashboard' element={<Home></Home>}></Route>
+            <Route path='/account' element={<Home></Home>}></Route>
+            <Route path='*' element={<h1>404 Page Not Found</h1>}></Route>
+          </Routes>
+        </div>
+
+
+        <Footer></Footer>
+      </div>
+
     </>
   )
 }
