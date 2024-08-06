@@ -1,4 +1,4 @@
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 import { apiConnector } from "../apiConnector";
 import { userEndpoints } from "../apis";
 
@@ -22,13 +22,3 @@ export const userInfo = async (token: string) => {
     }
 }
 
-// export function userInfo() {
-//     return (dispatch: any) => {
-
-//         const response = await apiConnector("GET", USER_INFO, {}, {
-//             "Content-Type": "multipart/form-data",
-//             Authorisation: `Bearer ${token}`,
-//         })
-
-//     }
-// }

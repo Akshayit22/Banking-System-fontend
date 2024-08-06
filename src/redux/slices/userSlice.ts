@@ -1,15 +1,15 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
-export interface CounterState {
+export interface UserState {
     counter: number
 }
-const initialState: CounterState = {
+const initialState: UserState = {
     counter: 0
 }
 
-const counterSlice = createSlice({
-    name: "counter",
+const userSlice = createSlice({
+    name: "user",
     initialState,
     reducers: {
         increamentCounter: (state: any, action: PayloadAction<number>) => {
@@ -21,8 +21,8 @@ const counterSlice = createSlice({
     },
 })
 
-export const { increamentCounter, decreamentCounter } = counterSlice.actions;
+export const { increamentCounter, decreamentCounter } = userSlice.actions;
 
 export const selectToken = (state: RootState) => state.counter.counter;
 
-export default counterSlice.reducer;
+export default userSlice.reducer;

@@ -3,28 +3,35 @@ import { BsBank } from "react-icons/bs"
 import { MdMenu, MdClose, MdLogout, MdNotifications, MdLogin } from "react-icons/md"
 import { useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../redux/hooks";
+import { logout } from "../services/operations/AuthApi";
+
 function Navbar() {
 
   const [open, setOpen] = useState(false);
+  const { token } = useSelector((state: any) => state.auth);
   const navigate = useNavigate();
   const location = useLocation();
-  const { token } = useSelector((state: any) => state.auth);
+  const dispatch = useAppDispatch();
 
   const toggle = () => {
     setOpen(!open);
   }
 
+  const logoutHandler = () => {
+    dispatch(logout(navigate, dispatch));
+  }
+
   const navItems = [
     { name: 'Home', link: '/' },
     { name: 'Dashboard', link: '/Dashboard' },
-    { name: 'account', link: '/account' },
+    { name: 'accounts', link: '/accounts' },
     { name: 'signup', link: '/signup' },
     { name: 'login', link: '/login' },
     { name: 'sample', link: '/sample' }
   ]
 
   useEffect(() => {
-    console.log(token);
     setOpen(false);
   }, [location])
 
@@ -49,14 +56,14 @@ function Navbar() {
           {
             token == null ?
               (
-                <div className="flex p-1">
+                <div className="flex p-1" onClick={() => navigate('/login')}>
                   <p className="text-1xl mt-2 font-bold mr-1 ">Login</p>
                   <MdLogin className='text-2xl mt-2 '></MdLogin>
                 </div>
               )
               : (
                 <div>
-                  <div className="flex p-1">
+                  <div className="flex p-1" onClick={logoutHandler}>
                     <p className="text-1xl mt-2 font-bold mr-1">Logout</p>
                     <MdLogout className='text-2xl mt-2'></MdLogout>
                   </div>

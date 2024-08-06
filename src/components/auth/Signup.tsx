@@ -1,10 +1,17 @@
 import { useForm } from 'react-hook-form';
 import { BsBank } from 'react-icons/bs'
 import { toast } from 'react-toastify';
+import { signUp } from '../../services/operations/AuthApi';
+import { useNavigate } from 'react-router-dom';
+import { useAppDispatch } from "../../redux/hooks";
+import { setName } from '../../redux/slices/authSlice';
 
 function Signup() {
 
     const { register, handleSubmit } = useForm();
+
+    const dispatch = useAppDispatch();
+    const navigate = useNavigate();
 
     const handleSubmitSignup = (data: any) => {
         console.log(data);
@@ -25,7 +32,8 @@ function Signup() {
             toast.error('Password Length must be atleast 8 charcters.');
             return;
         }
-        //dispatch(signup(data.firstName, data.lastName, data.email, data.contact, data.password, Navigate))
+        dispatch(setName(data.userName));
+        dispatch(signUp(data.userName, data.password, navigate));
     }
 
     return (
