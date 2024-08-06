@@ -3,8 +3,8 @@ import { BsBank } from "react-icons/bs"
 import { MdMenu, MdClose, MdLogout, MdNotifications, MdLogin } from "react-icons/md"
 import { useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useAppDispatch } from "../redux/hooks";
-import { logout } from "../services/operations/AuthApi";
+import { useAppDispatch } from "../../redux/hooks";
+import { logout } from "../../services/operations/AuthApi";
 
 function Navbar() {
 

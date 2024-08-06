@@ -4,7 +4,7 @@ function Sample() {
 
     const dispatch = useAppDispatch();
 
-    const { counter } = useAppSelector(state => state.counter);
+    const { counter } = useAppSelector(state => state.count);
 
     return (
         <div>

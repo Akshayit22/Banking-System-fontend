@@ -39,7 +39,7 @@ function Login() {
             return;
         }
         dispatch(setName(data.userName));
-        dispatch(login(data.userName, data.password, navigate, dispatch));
+        dispatch(login(data.userName, data.password, navigate));
     }
 
 

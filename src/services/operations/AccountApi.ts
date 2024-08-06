@@ -1,24 +1,21 @@
 import { toast } from "react-hot-toast";
 import { apiConnector } from "../apiConnector";
 import { accountEndpoints } from "../apis";
-import { setAccounts } from "../../redux/slices/accountSlice";
-
+import { setAccount, setAccounts } from "../../redux/slices/accountSlice";
 
 const { ACCOUNT_API } = accountEndpoints;
 
-export function getAccounts(token: any | string, dispatch: any) {
-    return async () => {
+export function getAccounts(token: any | string) {
+    return async (dispatch: any) => {
         const toastId = toast.loading("Getting Account Details..");
         try {
-
-            console.log(token, "------>", ACCOUNT_API)
             const response = await apiConnector("GET", ACCOUNT_API, {}, {
                 Authorization: `Bearer ${token}`,
             })
+            console.log(ACCOUNT_API + "ACCOUNT_API response.............", response.data)
 
-            console.log("ACCOUNT_API response.............", response)
-
-            dispatch(setAccounts(response.data));
+            const data = response.data;
+            dispatch(setAccounts(data));
             console.log("data is set.")
 
         }

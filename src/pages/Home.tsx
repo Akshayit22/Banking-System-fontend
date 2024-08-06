@@ -1,10 +1,16 @@
-import { BsBank } from "react-icons/bs"
+
+import img from '../assets/home.jpg';
+
 
 function Home() {
   return (
-    <div>Home
-      <p className="text-lime-400 text-4xl">Testing Tailwind css</p>
-      <BsBank className='text-4xl bg-green-500'></BsBank>
+    <div className="min-h-[93vh] flex justify-center items-center bg-gradient-to-r from-gray-400 to to-gray-700">
+      <div className="flex flex-wrap m-auto">
+        <img src={img} className=" w-[65%]" />
+        <div className=" w-[35%]"></div>
+
+      </div>
+
     </div>
   )
 }

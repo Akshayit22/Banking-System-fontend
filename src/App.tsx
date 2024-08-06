@@ -1,6 +1,6 @@
 import './index.css';
-import Footer from './pages/Footer';
-import Navbar from './pages/Navbar';
+import Footer from './components/common/Footer';
+import Navbar from './components/common/Navbar';
 import Home from './pages/Home';
 import { Route, Routes } from 'react-router-dom';
 import Sample from './components/Sample';
@@ -15,7 +15,7 @@ function App() {
     <>
       <div>
         <Navbar></Navbar>
-        <div className='md:ml-56 pt-16 md:pt-16 md:p-3 min-h-screen'>
+        <div className='md:ml-52 pt-16 md:pt-16 min-h-screen'>
           <Routes >
             <Route path='/' element={<Home></Home>}></Route>
             <Route path='/login' element={<Login />}></Route>

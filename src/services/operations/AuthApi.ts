@@ -4,15 +4,14 @@ import { authEndpoints } from "../apis";
 import { setToken } from "../../redux/slices/authSlice";
 const { LOGIN_API, SIGNUP_API } = authEndpoints;
 
-export function signUp(userName: string, password: string, navigate: any) {
+export function signUp(userName: string, password: string, name: string, mobile: string, gender: string, age: number) {
     return async () => {
         const toastId = toast.loading("Sending Request to Server...");
         try {
             console.log(userName, "--", password, "------>", SIGNUP_API)
 
             const response = await apiConnector("POST", SIGNUP_API, {
-                userName,
-                password,
+                userName, password, name, mobile, gender, age
             })
 
             console.log("SIGNUP_API response ............", response);
@@ -20,7 +19,6 @@ export function signUp(userName: string, password: string, navigate: any) {
                 toast.success("Sign Up successful, login now.")
             }
 
-            navigate('/login');
         }
         catch (error: any) {
             console.log("SIGNUP_API error .........", error);
@@ -31,8 +29,8 @@ export function signUp(userName: string, password: string, navigate: any) {
     }
 }
 
-export function login(userName: string, password: string, navigate: any, dispatch: any) {
-    return async () => {
+export function login(userName: string, password: string, navigate: any) {
+    return async (dispatch: any) => {
         const toastId = toast.loading("Sending Request to Server...");
         try {
             console.log(userName, "--", password, "------>", LOGIN_API)
@@ -47,6 +45,7 @@ export function login(userName: string, password: string, navigate: any, dispatc
 
                 toast.success("Login Successful.");
                 navigate('/accounts');
+
             }
 
         } catch (error: any) {
