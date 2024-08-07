@@ -25,3 +25,22 @@ export function userInfo(token: any | string) {
         toast.dismiss(toastId);
     }
 }
+
+/*
+get user details:
+{
+  "userDto": {
+    "userRole": "USER",
+    "username": "ram@gmail.com"
+  },
+  "addressDtos": [],
+  "userDetailsDto": {
+    "name": "Akshay Telang",
+    "mobile": "123456789",
+    "gender": "MALE",
+    "age": 22
+  }
+}
+
+
+*/

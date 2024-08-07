@@ -8,10 +8,7 @@ function Dashboard() {
     const dispatch = useAppDispatch();
 
     const { name } = useAppSelector((state) => state.auth);
-    const { accounts, account } = useAppSelector((state) => state.account);
 
-    console.log(account);
-    console.log(accounts);
 
     return (
         <div>Dashboard

@@ -24,6 +24,15 @@ function Signup() {
             toast.error('Enter valide Email Address.');
             return;
         }
+        const age: number = Number(data.age);
+        if (age < 18 || age > 100) {
+            toast.error('Invalide age. should be greated 18.');
+            return;
+        }
+        if (data.gender == null) {
+            toast.error('Please Select Gender.');
+            return;
+        }
         else if (data.password !== data.confirmPassword) {
             toast.error('Passwords not matching.');
             return;
@@ -32,19 +41,11 @@ function Signup() {
             toast.error('Password Length must be atleast 8 charcters.');
             return;
         }
-        const age: number = Number(data.age);
-        if (age < 18 || age > 100) {
-            toast.error('Invalide age. should be greated 18.');
-            return;
-        }
-        if (data.mobile.length == 10) {
+        if (data.mobile.length != 10) {
             toast.error('Invalide Mobile Number.');
             return;
         }
-        if (data.gender == null) {
-            toast.error('Please Select Gender.');
-            return;
-        }
+
         dispatch(setName(data.name));
 
         dispatch(signUp(data.userName, data.password, data.name, data.mobile, data.gender, data.age));

@@ -24,11 +24,10 @@ function Navbar() {
 
   const navItems = [
     { name: 'Home', link: '/' },
+    { name: 'User Details', link: '/user-details' },
+    { name: 'Accounts', link: '/accounts' },
     { name: 'Dashboard', link: '/Dashboard' },
-    { name: 'accounts', link: '/accounts' },
-    { name: 'signup', link: '/signup' },
-    { name: 'login', link: '/login' },
-    { name: 'sample', link: '/sample' }
+    { name: 'Sample', link: '/sample' },
   ]
 
   useEffect(() => {
