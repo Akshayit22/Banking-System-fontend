@@ -45,7 +45,7 @@ function Login() {
 
 
     return (
-        <div className="flex min-h-screen flex-col">
+        <div className="flex min-h-screen flex-col mb-20">
             <div className="mx-auto text-center mt-20">
                 <p className="text-3xl mt text-cyan-600">Welcome, to Login page</p>
             </div>

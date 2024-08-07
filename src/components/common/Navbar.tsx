@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { BsBank } from "react-icons/bs"
-import { MdMenu, MdClose, MdLogout, MdNotifications, MdLogin } from "react-icons/md"
+import { MdMenu, MdClose, MdLogout, MdLogin } from "react-icons/md"
 import { useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../redux/hooks";
