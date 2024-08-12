@@ -1,7 +1,9 @@
 import { toast } from "react-hot-toast";
 import { apiConnector } from "../apiConnector";
 import { authEndpoints } from "../apis";
-import { setToken } from "../../redux/slices/authSlice";
+import { clearAuthSlice, setToken } from "../../redux/slices/authSlice";
+import { clearUserSlice } from "../../redux/slices/userSlice";
+import { clearAccountSlice } from "../../redux/slices/accountSlice";
 const { LOGIN_API, SIGNUP_API } = authEndpoints;
 
 export function signUp(userName: string, password: string, name: string, mobile: string, gender: string, age: number) {
@@ -59,11 +61,10 @@ export function login(userName: string, password: string, navigate: any) {
 
 export function logout(navigate: any, dispatch: any) {
     return () => {
-        dispatch(setToken(null))
-        // dispatch(setUser(null))
-        // dispatch(resetCart())
+        dispatch(clearAuthSlice());
+        dispatch(clearUserSlice());
+        dispatch(clearAccountSlice());
         localStorage.removeItem("token")
-        //localStorage.removeItem("user")
         toast.success("Logged Out")
         navigate("/")
     }

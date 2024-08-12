@@ -52,26 +52,26 @@ function Home() {
         <div className='flex flex-wrap gap-5 justify-center m-3 p-3'>
 
           <div className=''>
-            <div className='p-5 bg-white rounded-full w-fit'>
+            <div className='p-5 bg-white rounded-full w-fit hover:bg-gray-300 duration-500'>
               <MdAccountBalance className='text-5xl '></MdAccountBalance>
             </div>
             <p className='font-semibold text-white '>Bank Balance</p>
           </div>
           <div>
-            <div className='p-5 bg-white rounded-full w-fit'>
+            <div className='p-5 bg-white rounded-full w-fit hover:bg-gray-300 duration-500'>
               <MdCreditCard className='text-5xl '></MdCreditCard>
             </div>
             <p className='font-semibold text-white '>Credit Card</p>
           </div>
 
           <div>
-            <div className='p-5 bg-white rounded-full w-fit'>
+            <div className='p-5 bg-white rounded-full w-fit hover:bg-gray-300 duration-500'>
               <GiReceiveMoney className='text-5xl '></GiReceiveMoney>
             </div>
             <p className='font-semibold text-white '>Bank Loans</p>
           </div>
           <div>
-            <div className='p-5 bg-white rounded-full w-fit'>
+            <div className='p-5 bg-white rounded-full w-fit hover:bg-gray-300 duration-500'>
               <MdMoney className='text-5xl '></MdMoney>
             </div>
             <p className='font-semibold text-white '>Interest Rate</p>

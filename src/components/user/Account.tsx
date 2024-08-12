@@ -3,7 +3,8 @@ import { useAppDispatch, useAppSelector } from "../../redux/hooks"
 import { getAccounts } from "../../services/operations/AccountApi";
 import { MdAddCircle, MdCurrencyRupee } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-import { setUpdateAccount } from "../../redux/slices/accountSlice";
+import { setAccount, setUpdateAccount } from "../../redux/slices/accountSlice";
+import { setAccountNumber } from "../../redux/slices/authSlice";
 
 
 function Account() {
@@ -21,7 +22,9 @@ function Account() {
     }, []);
 
     const handleUseAccount = (acc: any) => {
-        console.log(acc);
+        dispatch(setAccount(acc));
+        dispatch(setAccountNumber(acc.accountNumber));
+        navigate('/dashboard')
     }
 
     const handleUpdate = (acc: any) => {

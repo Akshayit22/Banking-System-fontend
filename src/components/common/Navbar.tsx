@@ -46,7 +46,7 @@ function Navbar() {
           }
 
           <BsBank className='text-4xl ml-2 mt-1'></BsBank>
-          <p className="text-2xl mt-1 ml-2 font-semibold hover:cursor-pointer" onClick={() => navigate('/')}>Online Banking</p>
+          <p className="sm:text-2xl mt-1 ml-2 font-semibold hover:cursor-pointer" onClick={() => navigate('/')}>Online Banking</p>
 
         </div>
 
